@@ -10,3 +10,5 @@ class Search extends SearchEvent {
 
   const Search({required this.query});
 }
+
+class ClearSearch extends SearchEvent {}

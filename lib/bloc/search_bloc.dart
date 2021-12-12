@@ -10,6 +10,12 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   final RepositoryService _repositoryService;
   SearchBloc(this._repositoryService) : super(SearchInitial()) {
     on<Search>(_searchRepos);
+    on<ClearSearch>(_clearSearch);
+  }
+
+  Future<void> _clearSearch(
+      ClearSearch event, Emitter<SearchState> emit) async {
+    emit(SearchInitial());
   }
 
   Future<void> _searchRepos(Search event, Emitter<SearchState> emit) async {

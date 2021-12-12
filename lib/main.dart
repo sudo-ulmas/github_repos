@@ -268,6 +268,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
               : GestureDetector(
                   onTap: () {
                     controller.text = '';
+                    BlocProvider.of<SearchBloc>(context).add(ClearSearch());
                   },
                   child: Container(
                     margin: const EdgeInsets.all(8),
