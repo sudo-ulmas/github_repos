@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:github_repos/core/constants.dart';
 import 'package:github_repos/models/repository.dart';
+import 'package:github_repos/screens/repo/repo.dart';
 
 class Searcheditem extends StatefulWidget {
   final Repository repo;
@@ -24,6 +26,13 @@ class _SearcheditemState extends State<Searcheditem> {
         onPanCancel: () => setState(() {
           pressed = false;
         }),
+        onTap: () {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) => const RepositoryScreen(),
+            ),
+          );
+        },
         child: Container(
           color: Theme.of(context).colorScheme.surface,
           child: Stack(

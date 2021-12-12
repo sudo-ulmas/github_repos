@@ -16,6 +16,7 @@ abstract class AppTheme {
           bodyText2: bodyText2,
           headline2: headline2,
           headline3: headline3,
+          headline4: headline4,
           headline5: headline5,
         ),
         backgroundColor: backgroundColor,
@@ -29,7 +30,7 @@ abstract class AppTheme {
           onPrimary: backgroundColor,
           onSecondary: backgroundColor,
           onSurface: onSurface,
-          primary: backgroundColor,
+          primary: primary,
           secondary: backgroundColor,
           primaryVariant: backgroundColor,
           secondaryVariant: backgroundColor,
@@ -41,7 +42,7 @@ abstract class AppTheme {
   static const surfaceColor = Color(0xff1B1F23);
   static const errorColor = Colors.red;
   static const textGreyLight = Color(0xff6A737D);
-  static const primaryTextColor = Color(0xff0366D6);
+  static const primary = Color(0xff0366D6);
   static const bodyText1 = TextStyle(
     fontFamily: 'SF-Pro-Display',
     fontSize: 18,
@@ -53,6 +54,12 @@ abstract class AppTheme {
     fontSize: 18,
     fontWeight: FontWeight.normal,
     color: onSurface,
+  );
+  static const headline4 = TextStyle(
+    fontFamily: 'SF-Pro-Display',
+    fontSize: 18,
+    fontWeight: FontWeight.normal,
+    color: primary,
   );
 
   static const bodyText2 = TextStyle(

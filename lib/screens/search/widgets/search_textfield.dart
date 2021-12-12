@@ -43,7 +43,7 @@ class _SearchTextFieldState extends State<SearchTextField> {
                   BlocProvider.of<SearchBloc>(context).add(Search(query: a));
                 },
           keyboardType: TextInputType.visiblePassword,
-          cursorColor: AppTheme.primaryTextColor,
+          cursorColor: AppTheme.primary,
           cursorWidth: 2,
           cursorHeight: 20,
           style: Theme.of(context).textTheme.bodyText2,
