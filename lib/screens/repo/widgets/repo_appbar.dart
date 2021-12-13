@@ -3,7 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:github_repos/core/constants.dart';
 
 class RepoAppbar extends StatelessWidget with PreferredSizeWidget {
-  const RepoAppbar({Key? key}) : super(key: key);
+  final String title;
+  const RepoAppbar({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class RepoAppbar extends StatelessWidget with PreferredSizeWidget {
               alignment: Alignment.center,
               height: 40,
               child: Text(
-                'Back',
+                title,
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),

@@ -18,6 +18,8 @@ class Repository {
   final String language;
   @JsonKey(defaultValue: 0, name: 'stargazers_count')
   final int starCount;
+  @JsonKey(defaultValue: '', name: 'issues_url')
+  final String issuesUrl;
 
   const Repository({
     required this.id,
@@ -27,6 +29,7 @@ class Repository {
     required this.description,
     required this.language,
     required this.starCount,
+    required this.issuesUrl,
   });
 
   factory Repository.fromJson(Map<String, dynamic>? json) =>
