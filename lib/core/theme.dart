@@ -14,6 +14,7 @@ abstract class AppTheme {
         textTheme: const TextTheme(
           bodyText1: bodyText1,
           bodyText2: bodyText2,
+          headline1: headline1,
           headline2: headline2,
           headline3: headline3,
           headline4: headline4,
@@ -69,6 +70,12 @@ abstract class AppTheme {
     color: Colors.white,
   );
 
+  static const headline1 = TextStyle(
+    fontFamily: 'SF-Pro-Display',
+    fontSize: 28,
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
+  );
   static const headline2 = TextStyle(
     fontFamily: 'SF-Pro-Display',
     fontSize: 24,

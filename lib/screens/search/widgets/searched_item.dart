@@ -29,7 +29,9 @@ class _SearcheditemState extends State<Searcheditem> {
         onTap: () {
           Navigator.of(context).push(
             CupertinoPageRoute(
-              builder: (context) => const RepositoryScreen(),
+              builder: (context) => RepositoryScreen(
+                repository: widget.repo,
+              ),
             ),
           );
         },

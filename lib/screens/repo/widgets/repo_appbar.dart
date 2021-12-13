@@ -15,6 +15,7 @@ class RepoAppbar extends StatelessWidget with PreferredSizeWidget {
         onTap: () => Navigator.of(context).pop(),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisSize: MainAxisSize.min,
           children: [
             SvgPicture.asset(
               AppConstants.chevronLeftIcon,
