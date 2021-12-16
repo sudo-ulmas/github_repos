@@ -11,4 +11,6 @@ class Search extends SearchEvent {
   const Search({required this.query});
 }
 
+class SearchMoreRepositories extends SearchEvent {}
+
 class ClearSearch extends SearchEvent {}

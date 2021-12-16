@@ -1,25 +1,27 @@
-import 'package:dio/dio.dart';
 import 'package:github_repos/core/singletons/dio_settings.dart';
 import 'package:github_repos/core/singletons/service_locator.dart';
+import 'package:github_repos/models/base_pagination.dart';
 import 'package:github_repos/models/issue.dart';
-import 'package:github_repos/models/repository.dart';
 
 class RepositoryService {
-  Future<List<Repository>> searchRepositories({required String query}) async {
+  Future<BasePagination> searchRepositories({
+    required String query,
+    required int page,
+  }) async {
     final _dio = serviceLocator<DioSettings>().dio;
 
     final response = await _dio.get(
       'search/repositories',
       queryParameters: {
         'q': query,
+        'per_page': 10,
+        'page': page,
       },
     );
     print(response.data);
     print(response.statusCode);
     if (response.statusCode! >= 200 && response.statusCode! < 300) {
-      return (response.data['items'] as List)
-          .map((e) => Repository.fromJson(e))
-          .toList();
+      return BasePagination.fromJson(response.data);
     } else {
       final message = '${(response.data as Map<String, dynamic>).values.first}'
           .replaceAll(RegExp(r'[\[\]]'), '');
